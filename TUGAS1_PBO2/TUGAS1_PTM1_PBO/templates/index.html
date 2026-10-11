@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Data Kendaraan</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <div>
+            <h1>Data Kendaraan</h1>
+            <p class="subtitle">
+                GUI Flask dengan konsep Class dan Object
+            </p>
+        </div>
+    </header>
+
+
+    <main class="grid">
+
+        <!-- FORM TAMBAH KENDARAAN -->
+        <section class="card">
+
+            <h2>Tambah Kendaraan</h2>
+
+            <p class="help">
+                Form ini membuat object Kendaraan baru.
+            </p>
+
+            {% if pesan %}
+                <div class="alert">
+                    {{ pesan }}
+                </div>
+            {% endif %}
+
+
+            <form method="post" class="form">
+
+                <label for="nomor_polisi">
+                    Nomor Polisi
+                </label>
+
+                <input
+                    id="nomor_polisi"
+                    name="nomor_polisi"
+                    type="text"
+                    placeholder="Contoh: D 1234 ABC"
+                    required
+                >
+
+
+                <label for="merk">
+                    Merk
+                </label>
+
+                <input
+                    id="merk"
+                    name="merk"
+                    type="text"
+                    placeholder="Contoh: Toyota"
+                    required
+                >
+
+
+                <label for="model">
+                    Model
+                </label>
+
+                <input
+                    id="model"
+                    name="model"
+                    type="text"
+                    placeholder="Contoh: Avanza"
+                    required
+                >
+
+
+                <label for="tahun">
+                    Tahun
+                </label>
+
+                <input
+                    id="tahun"
+                    name="tahun"
+                    type="number"
+                    min="1900"
+                    max="2100"
+                    placeholder="Contoh: 2024"
+                    required
+                >
+
+
+                <label for="warna">
+                    Warna
+                </label>
+
+                <input
+                    id="warna"
+                    name="warna"
+                    type="text"
+                    placeholder="Contoh: Hitam"
+                    required
+                >
+
+
+                <label for="jenis">
+                    Jenis Kendaraan
+                </label>
+
+                <select id="jenis" name="jenis" required>
+
+                    <option value="">
+                        -- Pilih Jenis --
+                    </option>
+
+                    <option value="Mobil">
+                        Mobil
+                    </option>
+
+                    <option value="Motor">
+                        Motor
+                    </option>
+
+                    <option value="Truk">
+                        Truk
+                    </option>
+
+                    <option value="Bus">
+                        Bus
+                    </option>
+
+                </select>
+
+
+                <button type="submit">
+                    Simpan Data
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- DAFTAR KENDARAAN -->
+        <section class="card">
+
+            <div class="section-head">
+
+                <div>
+
+                    <h2>Daftar Kendaraan</h2>
+
+                    <p class="help">
+                        Data tersimpan dalam list.
+                    </p>
+
+                </div>
+
+                <span class="badge">
+                    {{ kendaraan|length }} Data
+                </span>
+
+            </div>
+
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>No</th>
+                            <th>Nomor Polisi</th>
+                            <th>Merk</th>
+                            <th>Model</th>
+                            <th>Tahun</th>
+                            <th>Warna</th>
+                            <th>Jenis</th>
+                            <th>Aksi</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                    {% for k in kendaraan %}
+
+                        <tr>
+
+                            <td>
+                                {{ loop.index }}
+                            </td>
+
+                            <td>
+                                {{ k.nomor_polisi }}
+                            </td>
+
+                            <td>
+                                {{ k.merk }}
+                            </td>
+
+                            <td>
+                                {{ k.model }}
+                            </td>
+
+                            <td>
+                                {{ k.tahun }}
+                            </td>
+
+                            <td>
+                                {{ k.warna }}
+                            </td>
+
+                            <td>
+                                {{ k.jenis }}
+                            </td>
+
+                            <td>
+
+                                <form
+                                    action="{{ url_for('hapus', nomor_polisi=k.nomor_polisi) }}"
+                                    method="post"
+                                >
+
+                                    <button
+                                        class="btn-danger"
+                                        type="submit"
+                                        onclick="return confirm('Hapus data kendaraan ini?')"
+                                    >
+                                        Hapus
+                                    </button>
+
+                                </form>
+
+                            </td>
+
+                        </tr>
+
+                    {% else %}
+
+                        <tr>
+
+                            <td
+                                colspan="8"
+                                class="empty"
+                            >
+                                Belum ada data kendaraan.
+                            </td>
+
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>
