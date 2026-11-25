@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}BMI{% endblock %}
+
+{% block content %}
+<h1 class="page-title">Indeks massa tubuh (BMI)</h1>
+<p class="page-desc">Masukkan berat dan tinggi badan untuk menghitung BMI dan rentang berat ideal.</p>
+
+<div class="split">
+  <form class="panel" method="post">
+    <div class="field-row">
+      <label class="field">
+        <span>Berat badan (kg)</span>
+        <input type="text" inputmode="decimal" name="berat" value="{{ form.berat }}" placeholder="65" required>
+      </label>
+      <label class="field">
+        <span>Tinggi badan (cm)</span>
+        <input type="text" inputmode="decimal" name="tinggi" value="{{ form.tinggi }}" placeholder="170" required>
+      </label>
+    </div>
+
+    <button class="btn btn--primary" type="submit">Hitung BMI</button>
+
+    <details class="formula">
+      <summary>Rumus yang dipakai</summary>
+      <pre><code>tinggi = tinggi_cm / 100
+bmi = berat / tinggi ** 2
+
+if bmi &lt; 18.5:   kurang
+elif bmi &lt; 25:   normal
+elif bmi &lt; 30:   berlebih
+else:           obesitas</code></pre>
+    </details>
+  </form>
+
+  <div class="stack">
+    <section class="display" aria-live="polite">
+      {% if error %}
+        <p class="display__msg display__msg--error">{{ error }}</p>
+      {% elif hasil %}
+        <p class="display__expr">BMI Anda</p>
+        <p class="display__result">{{ hasil.nilai }}</p>
+        <span class="chip chip--{{ hasil.nada }}">{{ hasil.kategori }}</span>
+      {% else %}
+        <p class="display__msg">Hasil BMI tampil di sini.</p>
+      {% endif %}
+    </section>
+
+    {% if hasil %}
+    <section class="panel">
+      <h2>Posisi pada skala</h2>
+      <div class="gauge" role="img" aria-label="BMI {{ hasil.nilai }}, kategori {{ hasil.kategori }}">
+        <div class="gauge__bar">
+          <i class="g-kurang"></i><i class="g-normal"></i><i class="g-lebih"></i><i class="g-obesitas"></i>
+        </div>
+        <span class="gauge__marker" style="left: {{ hasil.posisi }}%"></span>
+        <div class="gauge__labels">
+          <span>Kurang</span><span>Normal</span><span>Berlebih</span><span>Obesitas</span>
+        </div>
+      </div>
+      <dl class="summary">
+        <div><dt>Rentang berat ideal</dt><dd>{{ hasil.ideal_min }} sampai {{ hasil.ideal_maks }} kg</dd></div>
+      </dl>
+      <p class="muted note">BMI hanya indikator kasar dan bukan diagnosis. Konsultasikan kondisi kesehatan Anda dengan tenaga medis.</p>
+    </section>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Beranda{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div>
+    <h1>Alat hitung berbasis Flask untuk belajar operator Python</h1>
+    <p class="lead">Tiga alat dalam satu aplikasi. Setiap perhitungan memakai operator aritmatika, perbandingan, dan logika dari modul praktikum.</p>
+    <div class="actions">
+      <a class="btn btn--primary" href="{{ url_for('kalkulator') }}">Buka kalkulator</a>
+      <a class="btn btn--ghost" href="{{ url_for('cicilan') }}">Hitung cicilan</a>
+    </div>
+  </div>
+
+  <div class="display display--demo" aria-hidden="true">
+    <div class="demo-row"><span>17 // 5</span><b>3</b></div>
+    <div class="demo-row"><span>17 % 5</span><b>2</b></div>
+    <div class="demo-row"><span>17 ** 2</span><b>289</b></div>
+    <div class="demo-row"><span>17 / 5</span><b>3,4</b></div>
+  </div>
+</section>
+
+<section class="tools">
+  <h2>Pilih alat</h2>
+
+  <a class="tool" href="{{ url_for('kalkulator') }}">
+    <span class="tool__ops">+ - * / // % **</span>
+    <span class="tool__body">
+      <strong>Kalkulator operator</strong>
+      <span>Tujuh operator aritmatika Python, validasi input, dan riwayat perhitungan.</span>
+    </span>
+  </a>
+
+  <a class="tool" href="{{ url_for('cicilan') }}">
+    <span class="tool__ops">* / **</span>
+    <span class="tool__body">
+      <strong>Simulasi cicilan</strong>
+      <span>Bandingkan bunga flat dan anuitas, lengkap dengan jadwal angsuran 12 bulan pertama.</span>
+    </span>
+  </a>
+
+  <a class="tool" href="{{ url_for('bmi') }}">
+    <span class="tool__ops">/ **</span>
+    <span class="tool__body">
+      <strong>Indeks massa tubuh</strong>
+      <span>Hitung BMI, lihat kategorinya, dan temukan rentang berat badan ideal.</span>
+    </span>
+  </a>
+</section>
+{% endblock %}

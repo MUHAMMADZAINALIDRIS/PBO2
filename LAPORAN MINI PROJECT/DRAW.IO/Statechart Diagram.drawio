@@ -1,0 +1,75 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="ABbiXQck7tkSaF938ERv">
+    <mxGraphModel dx="1012" dy="547" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-110" edge="1" parent="1" source="zZgtaN7p74j3h2MhNIjG-100" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="zZgtaN7p74j3h2MhNIjG-103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-100" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="10" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-113" edge="1" parent="1" source="zZgtaN7p74j3h2MhNIjG-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="zZgtaN7p74j3h2MhNIjG-106">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-101" parent="1" style="html=1;whiteSpace=wrap;" value="Dipinjam" vertex="1">
+          <mxGeometry height="50" width="110" x="452" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-112" edge="1" parent="1" source="zZgtaN7p74j3h2MhNIjG-102" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="zZgtaN7p74j3h2MhNIjG-101">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-116" connectable="0" parent="zZgtaN7p74j3h2MhNIjG-112" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;labelPadding=0 4;" value="serahTerima()" vertex="1">
+          <mxGeometry relative="1" x="-0.0914" y="-4" as="geometry">
+            <mxPoint x="1" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-102" parent="1" style="html=1;whiteSpace=wrap;" value="Dialokasikan" vertex="1">
+          <mxGeometry height="50" width="110" x="260" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-111" edge="1" parent="1" source="zZgtaN7p74j3h2MhNIjG-103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="zZgtaN7p74j3h2MhNIjG-102">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-114" connectable="0" parent="zZgtaN7p74j3h2MhNIjG-111" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;labelPadding=0 4;" value="alokasiUnit()" vertex="1">
+          <mxGeometry relative="1" x="-0.0259" y="-2" as="geometry">
+            <mxPoint x="1" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-103" parent="1" style="html=1;whiteSpace=wrap;" value="Draf" vertex="1">
+          <mxGeometry height="50" width="110" x="74" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-119" edge="1" parent="1" source="zZgtaN7p74j3h2MhNIjG-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="zZgtaN7p74j3h2MhNIjG-117">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-104" parent="1" style="html=1;whiteSpace=wrap;" value="Diproses Teknisi" vertex="1">
+          <mxGeometry height="50" width="110" x="690" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-118" edge="1" parent="1" source="zZgtaN7p74j3h2MhNIjG-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="zZgtaN7p74j3h2MhNIjG-117">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-105" parent="1" style="html=1;whiteSpace=wrap;" value="Kembali" vertex="1">
+          <mxGeometry height="50" width="110" x="690" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-106" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Kondisi?" vertex="1">
+          <mxGeometry height="40" width="80" x="594" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-107" edge="1" parent="1" source="zZgtaN7p74j3h2MhNIjG-106" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;verticalAlign=bottom;endArrow=open;endSize=8;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="zZgtaN7p74j3h2MhNIjG-105" value="baik">
+          <mxGeometry relative="1" x="-0.9138" y="-6" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="724" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-108" edge="1" parent="1" source="zZgtaN7p74j3h2MhNIjG-106" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;verticalAlign=top;endArrow=open;endSize=8;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="zZgtaN7p74j3h2MhNIjG-104" value="rusak">
+          <mxGeometry relative="1" x="-0.9206" y="6" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points" />
+            <mxPoint x="584" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-117" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=default;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="780" y="160" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Cicilan{% endblock %}
+
+{% block content %}
+<h1 class="page-title">Simulasi cicilan</h1>
+<p class="page-desc">Hitung angsuran bulanan dan bandingkan dua metode bunga.</p>
+
+<div class="split">
+  <form class="panel" method="post">
+    <label class="field">
+      <span>Jumlah pinjaman (Rp)</span>
+      <input type="text" inputmode="numeric" name="pinjaman" value="{{ form.pinjaman }}" required>
+    </label>
+
+    <div class="field-row">
+      <label class="field">
+        <span>Bunga per tahun (%)</span>
+        <input type="text" inputmode="decimal" name="bunga" value="{{ form.bunga }}" required>
+      </label>
+      <label class="field">
+        <span>Tenor (bulan)</span>
+        <input type="text" inputmode="numeric" name="tenor" value="{{ form.tenor }}" required>
+      </label>
+    </div>
+
+    <fieldset class="ops">
+      <legend>Metode bunga</legend>
+      <div class="ops__grid ops__grid--2">
+        <input type="radio" name="metode" id="m-flat" value="flat"{% if form.metode == 'flat' %} checked{% endif %}>
+        <label for="m-flat"><b>Flat</b><small>Bunga dari pokok awal</small></label>
+        <input type="radio" name="metode" id="m-anuitas" value="anuitas"{% if form.metode == 'anuitas' %} checked{% endif %}>
+        <label for="m-anuitas"><b>Anuitas</b><small>Bunga dari sisa pokok</small></label>
+      </div>
+    </fieldset>
+
+    <button class="btn btn--primary" type="submit">Hitung cicilan</button>
+
+    <details class="formula">
+      <summary>Rumus yang dipakai</summary>
+      <pre><code># Bunga flat
+bunga_total = pinjaman * (bunga / 100) * (tenor / 12)
+angsuran = (pinjaman + bunga_total) / tenor
+
+# Anuitas
+r = bunga / 100 / 12
+angsuran = pinjaman * r / (1 - (1 + r) ** -tenor)</code></pre>
+    </details>
+  </form>
+
+  <div class="stack">
+    <section class="display" aria-live="polite">
+      {% if error %}
+        <p class="display__msg display__msg--error">{{ error }}</p>
+      {% elif hasil %}
+        <p class="display__expr">Angsuran per bulan, {{ hasil.metode }}</p>
+        <p class="display__result">{{ hasil.angsuran | rupiah }}</p>
+      {% else %}
+        <p class="display__msg">Isi data pinjaman, lalu pilih Hitung cicilan.</p>
+      {% endif %}
+    </section>
+
+    {% if hasil %}
+    <section class="panel">
+      <h2>Ringkasan</h2>
+      <dl class="summary">
+        <div><dt>Pokok pinjaman</dt><dd>{{ hasil.pinjaman | rupiah }}</dd></div>
+        <div><dt>Bunga per tahun</dt><dd>{{ hasil.bunga | angka(2) }}%</dd></div>
+        <div><dt>Tenor</dt><dd>{{ hasil.tenor }} bulan</dd></div>
+        <div><dt>Total bunga</dt><dd>{{ hasil.bunga_total | rupiah }}</dd></div>
+        <div><dt>Total pembayaran</dt><dd>{{ hasil.total_bayar | rupiah }}</dd></div>
+      </dl>
+    </section>
+    {% endif %}
+  </div>
+</div>
+
+{% if hasil %}
+<section class="panel schedule">
+  <h2>Jadwal angsuran</h2>
+  {% if hasil.tenor > 12 %}<p class="muted">Menampilkan 12 bulan pertama dari {{ hasil.tenor }} bulan.</p>{% endif %}
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Bulan</th><th class="num">Pokok</th><th class="num">Bunga</th><th class="num">Sisa pokok</th></tr>
+      </thead>
+      <tbody>
+        {% for baris in hasil.jadwal %}
+        <tr>
+          <td>{{ baris.bulan }}</td>
+          <td class="num">{{ baris.pokok | rupiah }}</td>
+          <td class="num">{{ baris.bunga | rupiah }}</td>
+          <td class="num">{{ baris.sisa | rupiah }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,38 @@
+:root { font-family: Inter, "Segoe UI", Arial, sans-serif; color: #1d2a44; background: #f4f6fa; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+.topbar { height: 72px; background: #142342; color: white; display: flex; justify-content: space-between; align-items: center; padding: 0 max(28px, calc((100vw - 1120px)/2)); font-size: 13px; }
+.topbar strong { display: flex; align-items: center; gap: 11px; font-size: 19px; }
+.logo { display: inline-grid; place-items: center; width: 32px; height: 32px; background: #7068ed; border-radius: 9px; }
+main { width: min(1120px, calc(100% - 40px)); margin: 0 auto; flex: 1; }
+.hero { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 45px 0 29px; }
+.eyebrow { margin: 0 0 10px; color: #5b56d9; font-size: 11px; font-weight: 800; letter-spacing: .16em; }
+h1 { margin: 0; font-size: clamp(27px, 4vw, 38px); letter-spacing: -.04em; }
+.hero p:last-child { margin: 12px 0 0; color: #738097; max-width: 690px; line-height: 1.6; }
+.pill { color: #356d65; background: #e4f6f0; padding: 10px 15px; border-radius: 50px; white-space: nowrap; font-size: 12px; font-weight: 700; }
+.grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); align-items: start; gap: 22px; }
+.card { background: white; border: 1px solid #e7ebf3; border-radius: 18px; padding: 28px; box-shadow: 0 9px 26px rgba(28,45,82,.04); }
+.card-title { display: flex; gap: 13px; align-items: start; margin-bottom: 26px; }
+.num { display: grid; place-items: center; width: 37px; height: 37px; flex-shrink: 0; border-radius: 11px; background: #eeedff; color: #5149d6; font-weight: 800; font-size: 13px; }
+h2 { margin: 0 0 6px; font-size: 19px; } .card-title p { margin: 0; color: #8b96a9; font-size: 12px; }
+label { display: block; margin: 18px 0 8px; color: #47536b; font-weight: 700; font-size: 13px; }
+input, select { width: 100%; height: 46px; border: 1px solid #dce2ec; border-radius: 10px; background: #fff; color: #263550; padding: 0 13px; font: inherit; font-size: 14px; }
+input:focus, select:focus { outline: 2px solid #a8a4f7; border-color: #655ce1; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+button { width: 100%; margin-top: 26px; border: 0; border-radius: 10px; background: #5149d6; color: white; height: 49px; padding: 0 17px; display: flex; justify-content: space-between; align-items: center; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+button:hover { background: #423abf; } button span { font-size: 22px; }
+.right { display: grid; gap: 17px; } .result { min-height: 360px; }
+.alert { padding: 18px; border-radius: 12px; } .alert strong { font-size: 15px; }
+.alert p { margin: 7px 0 0; font-size: 13px; line-height: 1.5; }
+.good { color: #075e48; background: #e7f8f0; } .bad { color: #9a3a2d; background: #fdf0ec; }
+dl { margin: 18px 0 0; } dl div { display: flex; justify-content: space-between; gap: 15px; border-bottom: 1px solid #eef1f6; padding: 12px 0; font-size: 13px; }
+dt { color: #78849a; } dd { margin: 0; font-weight: 700; text-align: right; }
+h3 { font-size: 14px; margin: 20px 0 9px; } ul { padding-left: 21px; color: #6d5360; line-height: 1.6; font-size: 13px; }
+.empty { text-align: center; padding: 49px 0; color: #9aa4b6; } .empty span { display: block; font-size: 34px; color: #a9a4f0; margin-bottom: 14px; }
+.empty strong { display: block; color: #384660; } .empty p { font-size: 12px; }
+.rules { background: #e9edf8; padding: 22px 25px; border-radius: 16px; color: #485a7e; }
+.rules h3 { margin-top: 0; color: #233654; } .rules p { line-height: 1.6; font-size: 13px; } .rules small { color: #7888a3; line-height: 1.5; }
+footer { max-width: 1120px; width: calc(100% - 40px); margin: 30px auto; color: #98a3b4; font-size: 11px; }
+@media (max-width: 780px) { .topbar { padding: 0 20px; } .grid { grid-template-columns: 1fr; } .hero { align-items: start; } }
+@media (max-width: 520px) { .topbar>span { display: none; } .hero { display: block; padding-top: 32px; } .pill { display: inline-block; margin-top: 18px; } .card { padding: 21px; } .two { grid-template-columns: 1fr; gap: 0; } }

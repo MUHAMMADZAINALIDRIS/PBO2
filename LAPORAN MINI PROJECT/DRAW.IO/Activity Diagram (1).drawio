@@ -1,0 +1,84 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="ABbiXQck7tkSaF938ERv">
+    <mxGraphModel dx="966" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-80" parent="1" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;html=1;" value="Activity Diagram Alur Pengembalian Parsial dan Pemeliharaan Ase" vertex="1">
+          <mxGeometry height="480" width="910" x="140" y="120" as="geometry">
+            <mxRectangle height="30" width="420" x="245" y="120" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-81" parent="zZgtaN7p74j3h2MhNIjG-80" style="swimlane;startSize=20;html=1;" value="Pemohon" vertex="1">
+          <mxGeometry height="460" width="290" y="20" as="geometry">
+            <mxRectangle height="460" width="40" y="20" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-91" edge="1" parent="zZgtaN7p74j3h2MhNIjG-81" source="zZgtaN7p74j3h2MhNIjG-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="zZgtaN7p74j3h2MhNIjG-85">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-84" parent="zZgtaN7p74j3h2MhNIjG-81" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="124" y="48" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-85" parent="zZgtaN7p74j3h2MhNIjG-81" style="html=1;whiteSpace=wrap;" value="Bawa Sebagian/Semua Unit" vertex="1">
+          <mxGeometry height="50" width="110" x="84" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="wbW6OJ0Nss0NIRnBZe07-1" parent="zZgtaN7p74j3h2MhNIjG-81" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=light-dark(#000000, #ff9090);" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="124" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-82" parent="zZgtaN7p74j3h2MhNIjG-80" style="swimlane;startSize=20;html=1;" value="Petugas Inventaris" vertex="1">
+          <mxGeometry height="460" width="310" x="290" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-96" edge="1" parent="zZgtaN7p74j3h2MhNIjG-82" source="zZgtaN7p74j3h2MhNIjG-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="zZgtaN7p74j3h2MhNIjG-93">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-90" parent="zZgtaN7p74j3h2MhNIjG-82" style="html=1;whiteSpace=wrap;" value="Cek Kode Aset &amp;amp; Kondisi Fisik" vertex="1">
+          <mxGeometry height="50" width="110" x="100" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-87" parent="zZgtaN7p74j3h2MhNIjG-82" style="html=1;whiteSpace=wrap;" value="Evaluasi Sisa Detail Paket&lt;div&gt;(Selesai vs Dikembalikan sebagian)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="210" x="50" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-97" edge="1" parent="zZgtaN7p74j3h2MhNIjG-82" source="zZgtaN7p74j3h2MhNIjG-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="zZgtaN7p74j3h2MhNIjG-87">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-86" parent="zZgtaN7p74j3h2MhNIjG-82" style="html=1;whiteSpace=wrap;" value="Aset &#39;Tersedia&quot;&lt;div&gt;Detail &#39;Kembali&#39;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="110" x="100" y="288" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-93" parent="zZgtaN7p74j3h2MhNIjG-82" style="rhombus;whiteSpace=wrap;html=1;" value="Kondisi Baik?" vertex="1">
+          <mxGeometry height="60" width="110" x="100" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-95" edge="1" parent="zZgtaN7p74j3h2MhNIjG-82" source="zZgtaN7p74j3h2MhNIjG-93" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;verticalAlign=top;endArrow=open;endSize=8;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="zZgtaN7p74j3h2MhNIjG-86" value="yes">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="120" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-83" parent="zZgtaN7p74j3h2MhNIjG-80" style="swimlane;startSize=20;html=1;" value="Teknisi" vertex="1">
+          <mxGeometry height="460" width="310" x="600" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-98" edge="1" parent="zZgtaN7p74j3h2MhNIjG-83" source="zZgtaN7p74j3h2MhNIjG-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="zZgtaN7p74j3h2MhNIjG-88">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-89" parent="zZgtaN7p74j3h2MhNIjG-83" style="html=1;whiteSpace=wrap;" value="Periksa &amp;amp; Uji Kondisi Teknis" vertex="1">
+          <mxGeometry height="50" width="110" x="110" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-88" parent="zZgtaN7p74j3h2MhNIjG-83" style="html=1;whiteSpace=wrap;" value="Simpan Perbaikan" vertex="1">
+          <mxGeometry height="50" width="110" x="110" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-92" edge="1" parent="zZgtaN7p74j3h2MhNIjG-80" source="zZgtaN7p74j3h2MhNIjG-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="zZgtaN7p74j3h2MhNIjG-90">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-94" edge="1" parent="zZgtaN7p74j3h2MhNIjG-80" source="zZgtaN7p74j3h2MhNIjG-93" style="edgeStyle=orthogonalEdgeStyle;html=1;align=left;verticalAlign=bottom;endArrow=open;endSize=8;rounded=0;defaultLabelBackgroundColor=page;labelPadding=0 4;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="zZgtaN7p74j3h2MhNIjG-89" value="no">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="550" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZgtaN7p74j3h2MhNIjG-99" edge="1" parent="zZgtaN7p74j3h2MhNIjG-80" source="zZgtaN7p74j3h2MhNIjG-88" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="zZgtaN7p74j3h2MhNIjG-87">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wbW6OJ0Nss0NIRnBZe07-2" edge="1" parent="zZgtaN7p74j3h2MhNIjG-80" source="zZgtaN7p74j3h2MhNIjG-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="wbW6OJ0Nss0NIRnBZe07-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,8 @@
+1. extends membuat halaman mewarisi kerangka dari template induk; block menandai bagian yang bisa diisi ulang oleh halaman anak.
+2. Jika database bocor, penyerang tidak langsung memperoleh password asli; hash bersifat satu arah dan hanya bisa dicocokkan.
+3. Siapa pun yang mengetahui alamatnya dapat membuka portofolio tanpa login.
+4. GET dapat dipicu tanpa sengaja (tautan, gambar, prefetch); POST dengan token CSRF memastikan permintaan benar-benar berasal dari form milik aplikasi.
+5. Penyerang dapat membuat tautan login yang setelah berhasil mengirim korban ke situs berbahaya (open redirect).
+6. Keduanya dapat dianimasikan oleh GPU tanpa menghitung ulang tata letak halaman, sehingga lebih halus dan hemat baterai.
+7. Observer dipanggil browser hanya saat visibilitas berubah, sehingga tidak membebani halaman seperti penanganan scroll yang berjalan terus-menerus.
+8. Fitur ini membaca preferensi pengguna yang ingin gerakan dikurangi. Proyek ini mematikan animasi lewat CSS dan melewati penghitung, mesin ketik, serta tilt pada JavaScript.

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}404 Tidak Ditemukan - {{ profil.nama }}{% endblock %}
+{% block css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/publik.css') }}">{% endblock %}
+
+{% block content %}
+<header class="bar">
+  <a class="logo" href="{{ url_for('beranda') }}" aria-label="Beranda">{{ profil.inisial }}</a>
+</header>
+
+<main class="hero-beranda">
+  <div>
+    <p class="tag" style="margin-bottom: 16px;">ERROR 404</p>
+    <h1>
+      <span class="baris"><span>Halaman tidak</span></span>
+      <span class="baris biru"><span>ditemukan.</span></span>
+    </h1>
+    <p class="lead">Alamat URL yang Anda tuju tidak tersedia atau telah dipindahkan.</p>
+    <div class="cta">
+      <a class="btn btn--biru" href="{{ url_for('beranda') }}">Kembali ke Beranda</a>
+    </div>
+  </div>
+
+  <div class="orbit" aria-hidden="true">
+    <div class="blob"><span>404</span></div>
+    <i class="titik titik--1"></i><i class="titik titik--2"></i>
+  </div>
+</main>
+{% endblock %}

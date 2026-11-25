@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulasi Reservasi Laboratorium</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar"><strong><span class="logo">L</span> LabDesk</strong><span>Praktikum Python Flask</span></header>
+    <main>
+      <section class="hero">
+        <div><p class="eyebrow">STUDI KASUS PERCABANGAN</p>
+          <h1>Simulasi Reservasi Laboratorium</h1>
+          <p>Masukkan kebutuhan kegiatan. Sistem mengevaluasi kapasitas, durasi, dan pendamping dengan aturan contoh.</p></div>
+        <span class="pill">Data dan aturan simulasi</span>
+      </section>
+
+      <div class="grid">
+        <section class="card">
+          <div class="card-title"><span class="num">01</span><div><h2>Detail kegiatan</h2><p>Lengkapi seluruh pilihan sebelum memeriksa hasil.</p></div></div>
+          <form method="post">
+            <label for="lab">Laboratorium</label>
+            <select id="lab" name="lab" required>
+              <option value="" disabled {% if not data.lab %}selected{% endif %}>Pilih laboratorium</option>
+              <option value="komputer" {% if data.lab == 'komputer' %}selected{% endif %}>Lab Komputer — 30 orang</option>
+              <option value="jaringan" {% if data.lab == 'jaringan' %}selected{% endif %}>Lab Jaringan — 20 orang</option>
+              <option value="iot" {% if data.lab == 'iot' %}selected{% endif %}>Lab IoT — 15 orang</option>
+              <option value="multimedia" {% if data.lab == 'multimedia' %}selected{% endif %}>Lab Multimedia — 25 orang</option>
+            </select>
+
+            <label for="kegiatan">Jenis kegiatan</label>
+            <select id="kegiatan" name="kegiatan" required>
+              <option value="" disabled {% if not data.kegiatan %}selected{% endif %}>Pilih kegiatan</option>
+              <option value="praktikum" {% if data.kegiatan == 'praktikum' %}selected{% endif %}>Praktikum</option>
+              <option value="penelitian" {% if data.kegiatan == 'penelitian' %}selected{% endif %}>Penelitian</option>
+              <option value="pelatihan" {% if data.kegiatan == 'pelatihan' %}selected{% endif %}>Pelatihan</option>
+            </select>
+
+            <div class="two">
+              <div><label for="peserta">Jumlah peserta</label><input id="peserta" name="peserta" type="number" min="1" step="1" value="{{ data.peserta }}" placeholder="Contoh: 25" required></div>
+              <div><label for="durasi">Durasi (jam)</label><input id="durasi" name="durasi" type="number" min="1" step="1" value="{{ data.durasi }}" placeholder="1 sampai 4" required></div>
+            </div>
+
+            <label for="pendamping">Ada pendamping dosen?</label>
+            <select id="pendamping" name="pendamping">
+              <option value="tidak" {% if data.pendamping != 'ya' %}selected{% endif %}>Tidak</option>
+              <option value="ya" {% if data.pendamping == 'ya' %}selected{% endif %}>Ya</option>
+            </select>
+            <button type="submit">Periksa kelayakan <span>→</span></button>
+          </form>
+        </section>
+
+        <aside class="right">
+          <section class="card result">
+            <div class="card-title"><span class="num">02</span><div><h2>Hasil evaluasi</h2><p>Keputusan muncul setelah formulir dikirim.</p></div></div>
+            {% if error %}<div class="alert bad"><strong>Input perlu diperbaiki</strong><p>{{ error }}</p></div>
+            {% elif hasil %}
+              <div class="alert {{ 'good' if hasil.memenuhi else 'bad' }}">
+                <strong>{{ hasil.status }}</strong>
+                <p>{{ 'Semua aturan contoh terpenuhi.' if hasil.memenuhi else 'Periksa alasan berikut lalu ubah input.' }}</p>
+              </div>
+              <dl><div><dt>Kapasitas laboratorium</dt><dd>{{ hasil.kapasitas if hasil.kapasitas is not none else 'Tidak diketahui' }}</dd></div>
+                  <div><dt>Jumlah peserta</dt><dd>{{ hasil.status_peserta }}</dd></div>
+                  <div><dt>Pendamping diperlukan</dt><dd>{{ 'Ya' if hasil.perlu_pendamping else 'Tidak' }}</dd></div></dl>
+              {% if hasil.alasan %}<h3>Alasan</h3><ul>{% for alasan in hasil.alasan %}<li>{{ alasan }}</li>{% endfor %}</ul>{% endif %}
+            {% else %}<div class="empty"><span>◈</span><strong>Siap untuk dievaluasi</strong><p>Isi formulir di sebelah kiri untuk melihat hasil.</p></div>{% endif %}
+          </section>
+          <section class="rules"><h3>Aturan simulasi</h3>
+            <p>Durasi 1–4 jam. Peserta tidak boleh melebihi kapasitas lab. Praktikum, penggunaan Lab IoT, atau pelatihan dengan peserta > 20 orang memerlukan pendamping dosen.</p>
+            <small>Hasil ini hanya latihan pemrograman, bukan persetujuan resmi peminjaman.</small>
+          </section>
+        </aside>
+      </div>
+    </main>
+    <footer>STIKOM Poltek Cirebon • Contoh bahan ajar praktikum</footer>
+  </div>
+</body>
+</html>

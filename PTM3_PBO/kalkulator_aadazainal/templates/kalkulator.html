@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Kalkulator{% endblock %}
+
+{% block content %}
+<h1 class="page-title">Kalkulator operator</h1>
+<p class="page-desc">Masukkan dua bilangan, pilih operator Python, lalu lihat hasilnya.</p>
+
+<div class="split">
+  <form class="panel" method="post">
+    <div class="field-row">
+      <label class="field">
+        <span>Bilangan A</span>
+        <input type="text" inputmode="decimal" name="a" value="{{ form.a }}" placeholder="17" required>
+      </label>
+      <label class="field">
+        <span>Bilangan B</span>
+        <input type="text" inputmode="decimal" name="b" value="{{ form.b }}" placeholder="5" required>
+      </label>
+    </div>
+
+    <fieldset class="ops">
+      <legend>Operator</legend>
+      <div class="ops__grid">
+        {% for op in daftar_operator %}
+          <input type="radio" name="op" id="op-{{ op.kode }}" value="{{ op.kode }}"{% if form.op == op.kode %} checked{% endif %}>
+          <label for="op-{{ op.kode }}"><b>{{ op.simbol }}</b><small>{{ op.nama }}</small></label>
+        {% endfor %}
+      </div>
+    </fieldset>
+
+    <button class="btn btn--primary" type="submit">Hitung</button>
+  </form>
+
+  <div class="stack">
+    <section class="display" aria-live="polite">
+      {% if error %}
+        <p class="display__msg display__msg--error">{{ error }}</p>
+      {% elif hasil is not none %}
+        <p class="display__expr">{{ ekspresi }}</p>
+        <p class="display__result">{{ hasil }}</p>
+      {% else %}
+        <p class="display__msg">Hasil perhitungan tampil di sini.</p>
+      {% endif %}
+    </section>
+
+    <section class="panel">
+      <div class="panel__head">
+        <h2>Riwayat</h2>
+        {% if riwayat %}
+          <form method="post" action="{{ url_for('hapus_riwayat') }}">
+            <button class="link-btn" type="submit">Hapus riwayat</button>
+          </form>
+        {% endif %}
+      </div>
+      {% if riwayat %}
+        <ol class="history">
+          {% for item in riwayat %}<li>{{ item }}</li>{% endfor %}
+        </ol>
+      {% else %}
+        <p class="muted">Belum ada perhitungan. Coba 17 // 5 atau 2 ** 10.</p>
+      {% endif %}
+    </section>
+  </div>
+</div>
+{% endblock %}
